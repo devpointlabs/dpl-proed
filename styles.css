@@ -1,0 +1,268 @@
+/*****************
+  BASE & UTILITY
+*****************/
+body {
+  color: #FFF;
+  /* TODO figure out a background that works */
+  background-color: #797572;
+  background-image: -webkit-linear-gradient(263deg, rgba(255, 255, 255, 0.2) 0%, #000000 100%), -webkit-linear-gradient(18deg, rgba(255, 255, 255, 0.25) 25%, rgba(0, 0, 0, 0.25) 100%), -webkit-radial-gradient(47% 102%, rgba(255, 255, 255, 0.5) 0%, rgba(21, 24, 32, 0.6) 120%);
+  background-image: linear-gradient(-173deg, rgba(255, 255, 255, 0.2) 0%, #000000 100%), linear-gradient(72deg, rgba(255, 255, 255, 0.25) 25%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(47% 102%, rgba(255, 255, 255, 0.5) 0%, rgba(21, 24, 32, 0.6) 120%);
+  background-blend-mode: multiply;
+  width: 100vw;
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  background: #000;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*************
+  TYPOGRAPHY
+*************/
+/* weights */
+*[class^='light-']{ font-weight: 200; }
+*[class^='regular-']{ font-weight: 300; } /* regular is normally 400, just matching the designs here */
+*[class^='medium-']{ font-weight: 500; }
+*[class^='bold-']{ font-weight: bold; }
+
+/* sizes */
+*[class*='-35-']{ font-size: 35px; }
+*[class*='-22-']{ font-size: 22px; }
+*[class*='-19-']{ font-size: 19px; }
+*[class*='-17-']{ font-size: 17px; }
+*[class*='-15-']{ font-size: 15px; }
+
+/* colors */
+*[class$='-blue']{ color: #3C92FA; }
+
+/* style */
+*[class*='-italic-']{ font-style: italic; }
+
+/* spacing */
+h2 {
+  letter-spacing: 0.54px;
+  line-height: 38px;
+}
+p {
+  letter-spacing: 0.42px;
+  line-height: 31px;
+}
+a {
+  letter-spacing: 0.42px;
+  line-height: 22px;
+}
+
+/******************
+  LINKS / BUTTONS
+******************/
+.cta {
+  display: inline-block;
+  color: #FFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cta i {
+  padding-left: 10px;
+}
+
+.button {
+  display: inline-block;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #3C92FA;
+  border-radius: 5px;
+  padding: 10px 19px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.info a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #3C92FA;
+}
+
+/*********
+  HEADER
+*********/
+header {
+  background-image: url("https://placehold.it/900x900");
+  background-size: cover;
+  background-position: center;
+}
+header .txt-box {
+  padding: 70px 25px 56px 25px;
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.60) 17%, #000000 100%);
+}
+
+#join-branding {
+  max-width: 100%;
+  margin-bottom: 34px;
+}
+
+header h2 {
+  margin-bottom: 26px;
+}
+header p {
+  margin-bottom: 48px;
+}
+header .button {
+  margin-bottom: 20px;
+}
+
+/**********
+  STORIES
+**********/
+section .title {
+  padding: 32px 25px 48px 25px;
+  background-image: linear-gradient(-180deg, #121212 0%, #000000 100%);
+}
+section .title h4 {
+  padding-bottom: 19px;
+}
+.story img {
+  max-width: 100%;
+}
+.story .txt-box {
+  padding: 48px 25px;
+}
+.story .txt-box .cta {
+  padding-top: 60px;
+}
+
+/**************
+  INSTRUCTORS
+**************/
+.instructor {
+  margin: 22px 25px 45px 25px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #333;
+}
+.instructor:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.instructor .bio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 24px;
+}
+.instructor .bio .img-box {
+  height: 125px;
+  width: 125px;
+}
+.instructor .bio .img-box img {
+  border-radius: 50%;
+}
+.instructor .bio .txt-box {
+  padding-left: 24px;
+}
+.instructor .bio .txt-box p {
+  line-height: 24px;
+  padding-top: 5px;
+}
+.instructor .cta {
+  padding-top: 60px;
+}
+
+/************
+  COMMUNITY
+************/
+.community {
+  background-image: url("https://placehold.it/900x900");
+  background-size: cover;
+  background-position: center;
+}
+.community .txt-box {
+  padding: 60px 25px 84px 25px;
+  background: rgba(0,0,0,0.70);
+}
+.community h2 {
+  padding-bottom: 26px;
+}
+.community p {
+  padding-bottom: 74px;
+}
+
+/**************
+  PARTNERSHIP
+**************/
+.partnership .title {
+  padding: 60px 25px 0 25px;
+  background-image: linear-gradient(-180deg, #121212 0%, #000000 100%);
+}
+.partnership .txt-box {
+  margin: 24px 25px 48px 25px;
+  border-bottom: 1px solid #333;
+}
+.partnership .txt-box p:first-child {
+  padding-bottom: 48px;
+}
+
+.info {
+  padding-bottom: 24px;
+}
+.info label {
+  display: inline-block;
+  padding-bottom: 15px;
+}
+.info p {
+  line-height: 24px;
+}
+
+/************
+  FINAL CTA
+************/
+.final-cta {
+  margin: 40px 25px 0 25px;
+  padding-bottom: 33px;
+  border-bottom: 1px solid #333;
+}
+.final-cta h2 {
+  padding-bottom: 24px;
+}
+.final-cta p {
+  padding-bottom: 40px;
+}
+.final-cta .button {
+  display: block;
+  text-align: center;
+}
+
+/**********
+  CONTACT
+**********/
+.contact {
+  padding: 40px 25px 54px 25px;
+}
+.contact h2 {
+  padding-bottom: 24px;
+}
+.contact p {
+  padding-bottom: 48px;
+}
+.contact form label {
+  display: inline-block;
+  padding-bottom: 12px;
+}
+.contact form input {
+  width: 100%;
+  border-radius: 4px;
+  height: 48px;
+  border: none;
+  margin-bottom: 15px;
+}
+.contact .button {
+  margin-top: 17px;
+  display: block;
+  text-align: center;
+}
