@@ -4,24 +4,36 @@
 body {
   color: #FFF;
   /* TODO figure out a background that works */
-  background-color: #797572;
-  background-image: -webkit-linear-gradient(263deg, rgba(255, 255, 255, 0.2) 0%, #000000 100%), -webkit-linear-gradient(18deg, rgba(255, 255, 255, 0.25) 25%, rgba(0, 0, 0, 0.25) 100%), -webkit-radial-gradient(47% 102%, rgba(255, 255, 255, 0.5) 0%, rgba(21, 24, 32, 0.6) 120%);
-  background-image: linear-gradient(-173deg, rgba(255, 255, 255, 0.2) 0%, #000000 100%), linear-gradient(72deg, rgba(255, 255, 255, 0.25) 25%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(47% 102%, rgba(255, 255, 255, 0.5) 0%, rgba(21, 24, 32, 0.6) 120%);
-  background-blend-mode: multiply;
+  background-color: #000;
   width: 100vw;
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  /*max-width: 100vw;*/
+  /*overflow-x: hidden;*/
 }
 
-.container {
+/*.container {
   background: #000;
   max-width: 600px;
   margin: 0 auto;
-}
+}*/
 
 .contain {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-img { display: block; }
+.desktop-img { display: none; }
+@media screen and (min-width: 750px) {
+  .mobile-img { display: none; }
+  .desktop-img { display: block; }
 }
 
 /*************
@@ -36,6 +48,7 @@ body {
 /* sizes */
 *[class*='-35-']{ font-size: 35px; }
 *[class*='-22-']{ font-size: 22px; }
+*[class*='-20-']{ font-size: 20px; }
 *[class*='-19-']{ font-size: 19px; }
 *[class*='-17-']{ font-size: 17px; }
 *[class*='-15-']{ font-size: 15px; }
@@ -64,7 +77,7 @@ a {
   LINKS / BUTTONS
 ******************/
 .cta {
-  display: inline-block;
+  display: block;
   color: #FFF;
   cursor: pointer;
   text-decoration: none;
@@ -77,7 +90,7 @@ a {
   display: inline-block;
   text-transform: uppercase;
   color: #FFF;
-  background: #3C92FA;
+  background: #5D4488;
   border-radius: 5px;
   padding: 10px 19px;
   cursor: pointer;
@@ -94,18 +107,23 @@ a {
   HEADER
 *********/
 header {
-  background-image: url("https://placehold.it/900x900");
+  background-image: url("images/AdobeStock_125309081.jpeg");
   background-size: cover;
   background-position: center;
 }
 header .txt-box {
-  padding: 70px 25px 56px 25px;
+  padding: 142px 25px 120px 25px;
   background-image: linear-gradient(-180deg, rgba(0,0,0,0.60) 17%, #000000 100%);
 }
 
 #join-branding {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 25px;
   max-width: 100%;
-  margin-bottom: 34px;
+  max-height: 36px;
 }
 
 header h2 {
@@ -118,6 +136,15 @@ header .button {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 750px) {
+  header .txt-box {
+    padding-top: 212px;
+    padding-left: 100px;
+  }
+  header p {
+    max-width: 450px;
+  }
+}
 /**********
   STORIES
 **********/
@@ -128,14 +155,38 @@ section .title {
 section .title h4 {
   padding-bottom: 19px;
 }
-.story img {
+.story .img-box {
+  height: 342px;
   max-width: 100%;
+  box-sizing: border-box;
 }
 .story .txt-box {
-  padding: 48px 25px;
+  padding: 26px 25px 48px 25px;
 }
 .story .txt-box .cta {
   padding-top: 60px;
+}
+.story .txt-box h5 {
+  padding-bottom: 12px;
+}
+
+@media screen and (min-width: 750px) {
+  section .title {
+    padding-left: 100px;
+  }
+  section .title h2 {
+    max-width: 400px;
+  }
+
+  .story .img-box {
+    height: inherit;
+    padding: 0 100px;
+  }
+
+  .story .txt-box {
+    max-width: 450px;
+    padding-left: 100px;
+  }
 }
 
 /**************
@@ -146,9 +197,10 @@ section .title h4 {
   padding-bottom: 48px;
   border-bottom: 1px solid #333;
 }
-.instructor:last-child {
+#dave {
   border-bottom: none;
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 .instructor .bio {
   display: flex;
@@ -170,15 +222,38 @@ section .title h4 {
   line-height: 24px;
   padding-top: 5px;
 }
-.instructor .cta {
+.instructors .cta {
   padding-top: 60px;
+  padding-left: 25px;
+  padding-bottom: 48px;
+}
+
+@media screen and (min-width: 750px) {
+  .instructor {
+    border-bottom: none;
+    display: inline-block;
+    max-width: 353px;
+    margin-bottom: 0;
+  }
+  #jake {
+    margin-left: 100px;
+    margin-right: 52px;
+  }
+  #dave {
+    margin-left: 0;
+    padding-left: 68px;
+    border-left: 1px solid #333;
+  }
+  .instructors .cta {
+    padding: 0 0 48px 100px;
+  }
 }
 
 /************
   COMMUNITY
 ************/
 .community {
-  background-image: url("https://placehold.it/900x900");
+  background-image: url("images/Church&State-2DTA-2015.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -190,7 +265,22 @@ section .title h4 {
   padding-bottom: 26px;
 }
 .community p {
-  padding-bottom: 74px;
+  padding-bottom: 48px;
+}
+.community .button {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 750px) {
+  .community .txt-box {
+    padding: 96px 25px 124px 100px;
+  }
+  .community h2 {
+    max-width: 325px;
+  }
+  .community p {
+    max-width: 450px;
+  }
 }
 
 /**************
@@ -199,6 +289,11 @@ section .title h4 {
 .partnership .title {
   padding: 60px 25px 0 25px;
   background-image: linear-gradient(-180deg, #121212 0%, #000000 100%);
+}
+.partnership .logo {
+  max-height: 32px;
+  padding-bottom: 34px;
+  max-width: 100%;
 }
 .partnership .txt-box {
   margin: 24px 25px 48px 25px;
@@ -219,6 +314,24 @@ section .title h4 {
   line-height: 24px;
 }
 
+@media screen and (min-width: 750px) {
+  .partnership .title {
+    padding: 103px 100px 0 100px;
+  }
+  .partnership .txt-box {
+    margin: 24px 100px 48px 100px;
+  }
+  .partnership .txt-box p:first-child {
+    max-width: 465px;
+  }
+  .partnership .infocol {
+    display: inline-block;
+    max-width: 296px;
+    vertical-align: top;
+    padding-right: 100px;
+  }
+}
+
 /************
   FINAL CTA
 ************/
@@ -236,6 +349,12 @@ section .title h4 {
 .final-cta .button {
   display: block;
   text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .final-cta {
+    margin: 40px 100px 0 100px;
+  }
 }
 
 /**********
@@ -265,4 +384,16 @@ section .title h4 {
   margin-top: 17px;
   display: block;
   text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .contact {
+    padding: 40px 100px 84px 100px;
+  }
+  .contact p {
+    max-width: 450px;
+  }
+  .contact form {
+    max-width: 325px;
+  }
 }
