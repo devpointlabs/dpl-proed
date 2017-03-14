@@ -308,7 +308,13 @@ section .title h4 {
   border-bottom: 1px solid #333;
 }
 .partnership .txt-box p:first-child {
-  padding-bottom: 48px;
+  padding-bottom: 36px;
+}
+
+.partnership .txt-box img {
+  display: block;
+  max-width: 100%;
+  padding-bottom: 36px;
 }
 
 .info {
@@ -337,6 +343,9 @@ section .title h4 {
     max-width: 296px;
     vertical-align: top;
     padding-right: 100px;
+  }
+  .partnership .txt-box img {
+    max-width: 450px;
   }
 }
 
