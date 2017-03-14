@@ -49,16 +49,19 @@ window.onload = function() {
   function showStudent(n) {
     var i;
     var students = $('.student');
+    var titles = $('.student-title');
     // var studentDots = $('.student_dots span');
     if (n > students.length - 1) {studentIndex = 0}
     if (n < 0) {studentIndex = students.length - 1}
     for (i = 0; i < students.length; i++) {
       students[i].style.display = "none";
+      titles[i].style.display = "none";
     }
     // for (i = 0; i < studentDots.length; i++) {
     //   studentDots[i].className = studentDots[i].className.replace("dove-gray", "silver");
     // }
     students[studentIndex].style.display = "block";
+    titles[studentIndex].style.display = "block";
     // studentDots[studentIndex].className = studentDots[studentIndex].className.replace("silver", "dove-gray");
   }
 
