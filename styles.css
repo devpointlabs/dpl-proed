@@ -374,6 +374,8 @@ section .title h4 {
   padding-bottom: 12px;
 }
 .contact form input {
+  box-sizing: border-box;
+  padding: 1px 12px;
   width: 100%;
   border-radius: 4px;
   height: 48px;
@@ -396,4 +398,46 @@ section .title h4 {
   .contact form {
     max-width: 325px;
   }
+}
+
+/***********
+  CAROUSEL
+***********/
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.dot {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#student-arrows {
+  box-sizing: border-box;
+  padding: 25px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#previous_student,
+#next_student {
+  cursor: pointer;
+  font-size: 48px;
 }

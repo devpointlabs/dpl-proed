@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="font-awesome.min.css">
     <link rel="stylesheet" href="helvetica-neue.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
     <script src="main.js"></script>
   </head>
 
@@ -22,25 +24,57 @@
           <img id="join-branding" src="dpl-proed.png" />
           <h2 class="medium-35-">0-60 career shift:<br /><em class="-italic-">Learn to code.</em></h2>
           <p class="regular-19-">Everybody has a reason. Whether yours is to build the next iconic app, provide more for your family, or find fulfillment in your career - it's possible if you learn to code.</p>
-          <!-- TODO where are these linking to -->
-          <a class="regular-19- button" href="https://google.com">Apply today for free</a><br />
-          <a class="regular-19- cta" href="https:google.com">Learn more about the course<i class="fa fa-angle-right"></i></a>
+          <a class="regular-19- button" href="http://www.devpointlabs.com/apply">Apply today for free</a><br />
+          <a class="regular-19- cta" href="http://www.devpointlabs.com/uofu-proed-webdev">Learn more about the course<i class="fa fa-angle-right"></i></a>
         </div>
       </header>
+
+      <div id="student-arrows">
+        <i id="previous_student" class="fa fa-angle-left light-42" aria-hidden="true"></i>
+        <i id="next_student" class="fa fa-angle-right light-42" aria-hidden="true"></i>
+      </div>
 
       <section class="story">
         <div class="title">
           <h4 class="light-22-">Featured student stories</h4>
           <h2 class="medium-35-">Transformational is an under statement.</h2>
         </div>
-        <div class="img-box">
-          <img class="cover mobile-img" src="images/Christian-Mobile.jpg" />
-          <img class="cover desktop-img" src="images/Christian-Desktop.jpg" />
+
+        <div class="student fade">
+          <div class="img-box">
+            <img class="cover mobile-img" src="images/Anne-Mobile.jpg" />
+            <img class="cover desktop-img" src="images/Anne-Desktop.jpg" />
+          </div>
+          <div class="txt-box">
+            <h5 class="bold-20-">From sushi chef to software.</h5>
+            <p class="regular-19-">Christian Fuller was working as a full-time sushi chef in Alabama when he decided to make the career shift. Since graduation he has worked his way up inside a fitness company as a full-stack developer.</p>
+          </div>
         </div>
-        <div class="txt-box">
-          <h5 class="bold-20-">From sushi chef to software.</h5>
-          <p class="regular-19-">Christian Fuller was working as a full-time sushi chef in Alabama when he decided to make the career shift. Since graduation he has worked his way up inside a fitness company as a full-stack developer.</p>
+
+        <div class="student fade">
+          <div class="img-box">
+            <img class="cover mobile-img" src="images/Christian-Mobile.jpg" />
+            <img class="cover desktop-img" src="images/Christian-Desktop.jpg" />
+          </div>
+          <div class="txt-box">
+            <h5 class="bold-20-">From sushi chef to software.</h5>
+            <p class="regular-19-">Christian Fuller was working as a full-time sushi chef in Alabama when he decided to make the career shift. Since graduation he has worked his way up inside a fitness company as a full-stack developer.</p>
+          </div>
         </div>
+
+        <div class="student fade">
+          <div class="img-box">
+            <img class="cover mobile-img" src="images/Jordan-Mobile.jpg" />
+            <img class="cover desktop-img" src="images/Jordan-Desktop.jpg" />
+          </div>
+          <div class="txt-box">
+            <h5 class="bold-20-">From sushi chef to software.</h5>
+            <p class="regular-19-">Christian Fuller was working as a full-time sushi chef in Alabama when he decided to make the career shift. Since graduation he has worked his way up inside a fitness company as a full-stack developer.</p>
+          </div>
+        </div>
+
+
+        <div class="student_dots"></div>
       </section>
 
       <section class="instructors">
@@ -79,8 +113,7 @@
           </div>
         </div>
 
-        <!-- TODO where is this linking to -->
-        <a class="regular-19- cta">Learn more about the instructors<i class="fa fa-angle-right"></i></a>
+        <a class="regular-19- cta" href="http://www.devpointlabs.com/uofu-proed-webdev">Learn more about the instructors<i class="fa fa-angle-right"></i></a>
       </section>
 
       <section class="community">
@@ -88,8 +121,8 @@
           <h2 class="medium-35-">It's more than just school.</h2>
           <p class="regular-19-">DevPoint Labs is about community - meeting other people that share the same passion for life, work, and how one lives. Our alumni go on to build companies together, enjoy the beautiful Utah scenary, and help eachother out with anything that one another needs. If this sounds like you, then we’d love to hear from you. </p>
           <!-- TODO where are these linking to -->
-          <a class="regular-19- button" href="https://google.com">Apply today for free</a><br />
-          <a class="regular-19- cta">Learn more about the community<i class="fa fa-angle-right"></i></a>
+          <a class="regular-19- button" href="http://www.devpointlabs.com/apply">Apply today for free</a><br />
+          <a class="regular-19- cta" href="http://www.devpointlabs.com/uofu-proed-webdev">Learn more about the community<i class="fa fa-angle-right"></i></a>
         </div>
       </section>
 
@@ -144,14 +177,18 @@
       <section class="contact">
         <h2 class="medium-35-">Not sure yet?</h2>
         <p class="regular-19-">Reach out to us and we will send you an introductory course packet and answer any questions that you might have.</p>
-        <!-- TODO wire this form to go somewhere -->
-        <form>
+        <form id="contact-form">
           <label class="medium-17-">Full Name</label>
-          <input class="regular-19-" />
+          <input name="name" class="regular-19-" required/>
           <label class="medium-17-">Email Address</label>
-          <input class="regular-19-" type="email" />
-          <a class="button">Submit</a>
+          <input name="email" class="regular-19-" type="email" required/>
+          <label class="medium-17-">Phone Number</label>
+          <input name="tel" class="regular-19-" type="tel" required/>
+          <a class="button" id="contact-submit">Submit</a>
         </form>
+        <div id="contact-success" style="display: none;">
+          <p class="regular-19-blue">Your information was sent, we will be in touch with you soon!</p>
+        </div>
       </section>
     </div>
   </body>
