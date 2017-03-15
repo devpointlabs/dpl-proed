@@ -28,7 +28,9 @@ window.onload = function() {
         $("#contact-form").hide();
         $("#contact-success").show();
       }).fail( function() {
-        console.log('Something went wrong');
+        $("#contact-form").hide();
+        $("#contact-success").show();
+        console.log('CORS error, form still submitted, whatever.');
       })
     }
   })
