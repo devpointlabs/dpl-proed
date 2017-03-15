@@ -20,13 +20,15 @@ body {
 .contain {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .cover {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .mobile-img { display: block; }
@@ -113,6 +115,7 @@ header {
 }
 header .txt-box {
   padding: 142px 25px 120px 25px;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.60) 17%, #000000 100%);
   background-image: linear-gradient(-180deg, rgba(0,0,0,0.60) 17%, #000000 100%);
 }
 
@@ -130,7 +133,7 @@ header .txt-box {
 #join-branding img,
 .join-branding img {
   display: inline-block;
-  max-height: 36px;
+  /*max-height: 36px;*/
   vertical-align: top;
   max-width: 100%;
 }
@@ -166,6 +169,7 @@ header .button {
 **********/
 section .title {
   padding: 32px 25px 48px 25px;
+  background-image: -webkit-linear-gradient(top, #121212 0%, #000000 100%);
   background-image: linear-gradient(-180deg, #121212 0%, #000000 100%);
 }
 section .title h4 {
@@ -219,9 +223,15 @@ section .title h4 {
   margin-bottom: 0;
 }
 .instructor .bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding-bottom: 24px;
 }
 .instructor .bio .img-box {
@@ -304,6 +314,7 @@ section .title h4 {
 **************/
 .partnership .title {
   padding: 60px 25px 0 25px;
+  background-image: -webkit-linear-gradient(top, #121212 0%, #000000 100%);
   background-image: linear-gradient(-180deg, #121212 0%, #000000 100%);
 }
 .partnership .join-branding {
@@ -436,13 +447,13 @@ section .title h4 {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {opacity: 0;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+  to {opacity: 1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"}
 }
 
 @keyframes fade {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {opacity: 0;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+  to {opacity: 1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"}
 }
 
 .dot {
@@ -456,9 +467,15 @@ section .title h4 {
   position: absolute;
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #previous_student,
